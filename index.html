@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <body>
+
+    <div class="form-container">
+        <h2>Your Car Finance</h2>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div id="step1" class="form-step active">
+            <h2>Step 1</h2>
+            <h3>Select the company(ies) who provided your car finance</h3>
+            <div>
+                <input type="radio" name="car_company" id="black horse" value="black horse">
+                <label for="black horse">Black Horse</label>
+            </div>
+            <div>
+                <input type="radio" name="car_company" id="BMW" value="BMW Financial Services (GB) Limited">
+                <label for="BMW">BMW Financial Services (GB) Limited</label>
+            </div>
+            <div>
+                <input type="radio" name="car_company" id="Close Brothers Motor Finance"
+                    value="Close Brothers Motor Finance">
+                <label for="Close Brothers Motor Finance">Close Brothers Motor Finance</label>
+            </div>
+            <div>
+                <input type="radio" name="car_company" id="Mercedes-Benz Financial Services UK Limited"
+                    value="Mercedes-Benz Financial Services UK Limited">
+                <label for="Mercedes-Benz Financial Services UK Limited">Mercedes-Benz Financial Services UK
+                    Limited</label>
+            </div>
+            <div>
+                <input type="radio" name="car_company" id="MotoNovo Finance" value="MotoNovo Finance">
+                <label for="MotoNovo Finance">MotoNovo Finance</label>
+            </div>
+            <div>
+                <input type="radio" name="car_company" id="Santander Consumer Finance (Car Finance)"
+                    value="Santander Consumer Finance (Car Finance)">
+                <label for="Santander Consumer Finance (Car Finance)">Santander Consumer Finance (Car Finance)</label>
+            </div>
+            <div>
+                <input type="radio" name="car_company" id="Vauxhall Finance PLC" value="Vauxhall Finance PLC">
+                <label for="Vauxhall Finance PLC">Vauxhall Finance PLC</label>
+            </div>
+            <label for="cars">
+                <h3>If your car finance provider(s) is not listed above, please start typing below to
+                    select</h3>
+            </label>
+            <div>
+                <select name="cars" id="cars" class="dropdown_style" required>
+                    <option value=""></option>
+                    <option value="United Trust Bank">United Trust Bank</option>
+                    <option value="ALD Automotive IJK">ALD Automotive IJK</option>
+                    <option value="Alphera Financial Services (BMW)">Alphera Financial Services (BMW)</option>
+                    <option value="Audi Finance (Volkswagen)">Audi Finance (Volkswagen)</option>
+                    <option value="arclays Partner Finance">arclays Partner Finance</option>
+                    <option value="Bentle Financial Services (Volkswagen)">Bentle Financial Services (Volkswagen)
+                    </option>
+                    <option value="Billing Finance Ltd">Billing Finance Ltd</option>
+                    <option value="Black Horse">Black Horse</option>
+                </select>
+            </div>
+
+            <span id="step1Error" class="error-message"></span>
+
+            <div class="step-indicator">
+                <div class="step-circle active-circle"></div>
+                <div class="step-circle"></div>
+                <div class="step-circle"></div>
+                <div class="step-circle"></div>
+            </div>
+            <button onclick="validateStep(1)">Next</button>
+        </div>
+
+        <div id="step2" class="form-step">
+            <h2>Step 2</h2>
+            <h3>Before we get started, lets confirm a few details…</h3>
+            <label for="title">Title</label>
+            <select name="cars" id="cars" class="dropdown_style" required>
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Miss.">Miss.</option>
+                <option value="Ms.">Ms.</option>
+            </select>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" required>
+            <label for="Last_name">Last Name:</label>
+            <input type="text" id="last_name" required>
+            <label for="date_of_birth">Date of Birth:</label>
+            <input type="date" id="date_of_birth" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="c_email">Confirm Your Email:</label>
+            <input type="email" id="c_email" required>
+            <div><span id="step2Error" class="error-message"></span>
+                <span id="emailError" class="error-message"></span>
+            </div>
+            <button onclick="validateStep(2)">Next</button>
+            <button onclick="prevStep()">Previous</button>
+            <div class="step-indicator">
+                <div class="step-circle"></div>
+                <div class="step-circle active-circle"></div>
+                <div class="step-circle"></div>
+                <div class="step-circle"></div>
+            </div>
+        </div>
+
+        <div id="step3" class="form-step">
+            <h2>Step 3</h2>
+            <p>Did the car dealerships explain they would receive a commission for selling you the car finance?</p>
+            <div>
+                <input type="radio" name="commission" id="secondRadio1" value="Yes, I was told about the commission"
+                    required>
+                <label for="secondRadio1">Yes, I was told about the commission</label>
+            </div>
+            <div>
+                <input type="radio" name="commission" id="secondRadio2" value="No, I wasn’t told about the commission"
+                    required>
+                <label for="secondRadio2">No, I wasn’t told about the commission</label>
+            </div>
+            <p>Your car finance providers may have allowed the car dealership to increase the cost of your car finance
+                to earn a higher commission, if you had known this would you have:</p>
+            <div>
+                <input type="checkbox" name="checkbox1" id="checkbox1"
+                    value="Asked the car dealership if they could reduce the cost">
+                <label for="checkbox1">Asked the car dealership if they could reduce the cost</label>
+            </div>
+            <div>
+                <input type="checkbox" name="checkbox2" id="checkbox2" value="Shopped around for a better deal">
+                <label for="checkbox2">Shopped around for a better deal</label>
+            </div>
+            <div>
+                <input type="checkbox" name="checkbox3" id="checkbox3"
+                    value="Refused to take the car finance due to the increased cost SHOW SUMMARY">
+                <label for="checkbox3">Refused to take the car finance due to the increased cost SHOW SUMMARY</label>
+            </div>
+            <div>
+                <span id="radioError" class="error-message"></span>
+            </div>
+            <button onclick="validateStep(3)">Next</button>
+            <button onclick="prevStep()">Previous</button>
+            <div class="step-indicator">
+                <div class="step-circle"></div>
+                <div class="step-circle"></div>
+                <div class="step-circle active-circle"></div>
+                <div class="step-circle"></div>
+            </div>
+        </div>
+
+        <div id="step4" class="form-step">
+            <h2>Step 4</h2>
+            <p>Your data has been uploaded successfully!</p>
+            <div class="step-indicator">
+                <div class="step-circle"></div>
+                <div class="step-circle"></div>
+                <div class="step-circle"></div>
+                <div class="step-circle active-circle"></div>
+            </div>
+        </div>
+    </div>
+
+   <script src="forms.js"></script>
+</body>     
+
+        <script src="forms.js"></script>
+</body>
+</html>
